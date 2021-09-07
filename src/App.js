@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React  from 'react';
 
-function App() {
+import './styles/home.css';
+
+const  App = () => {
+  const buttons = ['Bienvenido', 'Recicladores', 'Asociaciones', 'Super Usuario'];
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="layout">
+      <div> <h1>Conceptos Plasticos </h1></div>
+      <div className="layout__menu">
+        {
+          buttons.map(btn => {
+            return( <button key={btn} className="layout__button"> {btn} </button>)
+          })
+        }
+      </div>
     </div>
   );
 }
